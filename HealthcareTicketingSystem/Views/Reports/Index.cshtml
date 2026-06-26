@@ -1,0 +1,226 @@
+﻿@{
+    ViewData["Title"] = "Reports Dashboard";
+}
+
+<div class="reports-hero mb-4">
+    <h1 class="fw-bold">Healthcare Reports Dashboard</h1>
+    <p class="text-muted mb-0">
+        Analytics and reporting for healthcare IT support tickets.
+    </p>
+</div>
+
+<hr class="mb-4" />
+
+<div class="row mb-4">
+    <div class="col-md-3 mb-3">
+        <div class="card dashboard-card text-white bg-primary">
+            <div class="card-body text-center">
+                <h5 class="fw-semibold">Total Tickets</h5>
+                <h2>@ViewBag.TotalTickets</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card dashboard-card text-white bg-success">
+            <div class="card-body text-center">
+                <h5 class="fw-semibold">Open Tickets</h5>
+                <h2>@ViewBag.OpenTickets</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card dashboard-card text-white bg-warning">
+            <div class="card-body text-center">
+                <h5 class="fw-semibold">In Progress</h5>
+                <h2>@ViewBag.InProgressTickets</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card dashboard-card text-white bg-danger">
+            <div class="card-body text-center">
+                <h5 class="fw-semibold">High Priority</h5>
+                <h2>@ViewBag.HighPriorityTickets</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-lg-6 mb-4">
+        <div id="category-chart" class="card report-card shadow-sm">
+            <div class="card-header bg-dark text-white py-3">
+                <h5 class="mb-0 fw-semibold">Tickets by Category</h5>
+            </div>
+            <div class="card-body chart-box">
+                <canvas id="categoryChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 mb-4">
+        <div id="priority-chart" class="card report-card shadow-sm">
+            <div class="card-header bg-dark text-white py-3">
+                <h5 class="mb-0 fw-semibold">Tickets by Priority Level</h5>
+            </div>
+            <div class="card-body chart-box">
+                <canvas id="priorityChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-lg-6 mb-4">
+        <div id="status-chart" class="card report-card shadow-sm">
+            <div class="card-header bg-dark text-white py-3">
+                <h5 class="mb-0 fw-semibold">Ticket Status Distribution</h5>
+            </div>
+            <div class="card-body chart-box chart-box-large">
+                <canvas id="statusChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 mb-4">
+        <div id="recent-activity" class="card report-card shadow-sm">
+            <div class="card-header bg-dark text-white py-3">
+                <h5 class="mb-0 fw-semibold">Recent Activity</h5>
+            </div>
+
+            <div class="card-body">
+                @if (ViewBag.RecentTickets != null)
+                {
+                    <div class="list-group list-group-flush">
+                        @foreach (var ticket in ViewBag.RecentTickets)
+                        {
+                            <div class="list-group-item px-0">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <strong>@ticket.Title</strong>
+                                        <div class="text-muted small">
+                                            @ticket.Department • @ticket.Status • Assigned to @ticket.AssignedTo
+                                        </div>
+                                    </div>
+
+                                    <span class="badge bg-secondary">
+                                        @ticket.CreatedDate.ToString("MM/dd/yyyy")
+                                    </span>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <p class="text-muted mb-0">No recent activity available.</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const categoryLabels = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(ViewBag.CategoryLabels));
+    const categoryData = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(ViewBag.CategoryData));
+
+    const priorityLabels = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(ViewBag.PriorityLabels));
+    const priorityData = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(ViewBag.PriorityData));
+
+    const statusLabels = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(ViewBag.StatusLabels));
+    const statusData = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(ViewBag.StatusData));
+
+    new Chart(document.getElementById('categoryChart'), {
+        type: 'bar',
+        data: {
+            labels: categoryLabels,
+            datasets: [{
+                label: 'Tickets',
+                data: categoryData,
+                backgroundColor: [
+                    '#0d6efd',
+                    '#20c997',
+                    '#ffc107',
+                    '#dc3545',
+                    '#6f42c1',
+                    '#fd7e14',
+                    '#198754'
+                ],
+                borderRadius: 8
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: { stepSize: 1 }
+                }
+            }
+        }
+    });
+
+    new Chart(document.getElementById('priorityChart'), {
+        type: 'bar',
+        data: {
+            labels: priorityLabels,
+            datasets: [{
+                label: 'Tickets',
+                data: priorityData,
+                borderRadius: 8,
+                backgroundColor: priorityLabels.map(priority => {
+                    if (priority === 'Critical') return '#dc3545';
+                    if (priority === 'High') return '#ffc107';
+                    if (priority === 'Medium') return '#0d6efd';
+                    if (priority === 'Low') return '#198754';
+                    return '#6c757d';
+                })
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: { stepSize: 1 }
+                }
+            }
+        }
+    });
+
+    new Chart(document.getElementById('statusChart'), {
+        type: 'doughnut',
+        data: {
+            labels: statusLabels,
+            datasets: [{
+                data: statusData,
+                backgroundColor: [
+                    '#198754',
+                    '#ffc107',
+                    '#0d6efd',
+                    '#dc3545',
+                    '#6c757d'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+</script>

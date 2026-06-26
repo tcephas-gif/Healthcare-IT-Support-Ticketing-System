@@ -1,0 +1,331 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+.bg-orange {
+    background-color: #fd7e14;
+    color: white;
+}
+.table {
+    width: 100%;
+}
+
+    .table th,
+    .table td {
+        vertical-align: middle;
+    }
+
+        .table td.text-nowrap {
+            white-space: nowrap;
+        }
+
+.bg-orange {
+    background-color: #fd7e14;
+    color: white;
+}
+.dashboard-card,
+.report-card {
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .dashboard-card:hover,
+    .report-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15);
+    }
+
+.card-header {
+    border-top-left-radius: 12px !important;
+    border-top-right-radius: 12px !important;
+}
+
+.badge {
+    padding: 0.45em 0.65em;
+    font-weight: 600;
+}
+.reports-hero {
+    padding-top: 1rem;
+}
+
+.dashboard-card,
+.report-card {
+    border: none;
+    border-radius: 18px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+    .dashboard-card:hover,
+    .report-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.16) !important;
+    }
+
+    .report-card .card-header {
+        border-top-left-radius: 18px !important;
+        border-top-right-radius: 18px !important;
+    }
+
+    .dashboard-card .card-body {
+        padding: 1.5rem;
+    }
+
+.chart-box {
+    height: 340px;
+}
+
+.chart-box-large {
+    height: 360px;
+}
+
+.badge {
+    padding: 0.45em 0.65em;
+    font-weight: 600;
+}
+/* ==========================================
+   Dashboard Cards
+========================================== */
+
+.dashboard-card {
+    border: none !important;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 .45rem 1rem rgba(0,0,0,.10);
+    transition: transform .25s ease, box-shadow .25s ease;
+    cursor: pointer;
+}
+
+    .dashboard-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 1.25rem 2.5rem rgba(0,0,0,.18);
+        z-index: 5;
+    }
+
+    .dashboard-card .card-body {
+        padding: 2rem 1rem;
+    }
+
+    .dashboard-card h5 {
+        font-weight: 600;
+        margin-bottom: .75rem;
+    }
+
+    .dashboard-card h2 {
+        font-size: 2.6rem;
+        font-weight: 700;
+    }
+
+
+/* ==========================================
+   Report Cards
+========================================== */
+
+.report-card {
+    border: none;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 .45rem 1rem rgba(0,0,0,.10);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+    .report-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 1rem 2rem rgba(0,0,0,.16);
+    }
+
+.card-header {
+    font-weight: 600;
+    letter-spacing: .3px;
+}
+
+
+/* ==========================================
+   Buttons
+========================================== */
+
+.btn {
+    border-radius: 12px;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.15);
+    }
+
+.btn-primary:hover {
+    box-shadow: 0 .85rem 1.75rem rgba(13,110,253,.35);
+}
+
+
+/* ==========================================
+   Table
+========================================== */
+
+.table tbody tr {
+    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+
+    .table tbody tr:hover {
+        transform: translateY(-2px);
+        background: #f8f9fa;
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.12);
+    }
+
+
+/* ==========================================
+   Badges
+========================================== */
+
+.badge {
+    font-size: .8rem;
+    padding: .45rem .7rem;
+    border-radius: 50rem;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+    .badge:hover {
+        transform: scale(1.1);
+        box-shadow: 0 .35rem .8rem rgba(0,0,0,.18);
+    }
+
+
+/* ==========================================
+   Forms
+========================================== */
+
+.form-control,
+.form-select {
+    border-radius: 12px;
+}
+
+
+/* ==========================================
+   Chart Containers
+========================================== */
+
+.chart-box {
+    height: 340px;
+}
+
+
+/* ==========================================
+   Page Animation
+========================================== */
+
+@keyframes fadeSlideUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dashboard-card,
+.report-card,
+.details-card {
+    animation: fadeSlideUp .5s ease both;
+}
+
+    .dashboard-card:nth-child(1) {
+        animation-delay: .05s;
+    }
+
+    .dashboard-card:nth-child(2) {
+        animation-delay: .10s;
+    }
+
+    .dashboard-card:nth-child(3) {
+        animation-delay: .15s;
+    }
+
+    .dashboard-card:nth-child(4) {
+        animation-delay: .20s;
+    }
+
+.report-card {
+    animation-delay: .15s;
+}
+.detail-box {
+    background: #f8f9fa;
+    border-radius: 14px;
+    padding: 1rem;
+    height: 100%;
+    transition: all .2s ease;
+}
+
+    .detail-box:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.10);
+    }
+
+.detail-label {
+    display: block;
+    font-weight: 700;
+    color: #495057;
+    margin-bottom: .35rem;
+    font-size: .9rem;
+}
+
+.detail-box p {
+    margin-bottom: 0;
+}
+/* ==========================================
+   Create Ticket Button
+========================================== */
+
+.create-ticket-btn {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.9rem 1.8rem;
+    border-radius: 14px;
+    box-shadow: 0 .4rem .9rem rgba(13,110,253,.2);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+    .create-ticket-btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 1rem 2rem rgba(13,110,253,.35);
+    }
+.create-ticket-btn {
+    min-width: 190px;
+}
+html{
+    scroll-behavior:smooth;
+}
+html {
+    scroll-behavior: smooth;
+}

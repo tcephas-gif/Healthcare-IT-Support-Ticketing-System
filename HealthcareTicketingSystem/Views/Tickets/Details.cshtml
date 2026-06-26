@@ -1,0 +1,135 @@
+@model HealthcareTicketingSystem.Models.Ticket
+
+@{
+    ViewData["Title"] = "Ticket Details";
+    var daysOpen = (DateTime.Now - Model.CreatedDate).Days;
+}
+
+<div class="details-card card report-card shadow-sm mx-auto mt-4" style="max-width: 800px;">
+    <div class="card-header bg-dark text-white py-3">
+        <h4 class="mb-0 fw-semibold">Ticket Details</h4>
+    </div>
+
+    <div class="card-body">
+        <h3 class="fw-bold mb-3">@Model.Title</h3>
+
+        <p class="text-muted mb-4">@Model.Description</p>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <strong>Department</strong>
+                <p>@Model.Department</p>
+            </div>
+
+            <div class="col-md-6">
+                <strong>Category</strong>
+                <p>@Model.Category</p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <strong>Priority</strong>
+                <p>
+                    @if (Model.Priority == "Critical")
+                    {
+                        <span class="badge bg-danger">Critical</span>
+                    }
+                    else if (Model.Priority == "High")
+                    {
+                        <span class="badge bg-warning text-dark">High</span>
+                    }
+                    else if (Model.Priority == "Medium")
+                    {
+                        <span class="badge bg-primary">Medium</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success">Low</span>
+                    }
+                </p>
+            </div>
+
+            <div class="col-md-6">
+                <strong>Status</strong>
+                <p>
+                    @if (Model.Status == "Open")
+                    {
+                        <span class="badge bg-success">Open</span>
+                    }
+                    else if (Model.Status == "In Progress")
+                    {
+                        <span class="badge bg-warning text-dark">In Progress</span>
+                    }
+                    else if (Model.Status == "Resolved")
+                    {
+                        <span class="badge bg-primary">Resolved</span>
+                    }
+                    else if (Model.Status == "Closed")
+                    {
+                        <span class="badge bg-dark">Closed</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">@Model.Status</span>
+                    }
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <strong>Reported By</strong>
+                <p>@Model.ReportedBy</p>
+            </div>
+
+            <div class="col-md-6">
+                <strong>Assigned To</strong>
+                <p>@Model.AssignedTo</p>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <strong>Created Date</strong>
+                <p>@Model.CreatedDate.ToString("MM/dd/yyyy h:mm tt")</p>
+            </div>
+
+            <div class="col-md-6">
+                <strong>Days Open</strong>
+                <p>
+                    @if (daysOpen == 0)
+                    {
+                        <span class="badge bg-success">Today</span>
+                    }
+                    else if (daysOpen <= 3)
+                    {
+                        <span class="badge bg-info">@daysOpen day(s)</span>
+                    }
+                    else if (daysOpen <= 7)
+                    {
+                        <span class="badge bg-warning text-dark">@daysOpen days</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">@daysOpen days</span>
+                    }
+                </p>
+            </div>
+        </div>
+
+        <div class="d-flex gap-2">
+            <a asp-action="Edit" asp-route-id="@Model.TicketId" class="btn btn-primary">
+                Edit Ticket
+            </a>
+
+            <a asp-action="Index" class="btn btn-secondary">
+                Back to List
+            </a>
+
+            <a asp-action="Delete" asp-route-id="@Model.TicketId" class="btn btn-outline-danger ms-auto">
+                Delete Ticket
+            </a>
+        </div>
+    </div>
+</div>

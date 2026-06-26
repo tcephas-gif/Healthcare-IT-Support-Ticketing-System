@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="hero-section text-center py-5 mb-5">
+    <h1 class="display-3 fw-bold mb-3">
+        Healthcare IT Ticketing System
+    </h1>
+
+    <p class="lead text-muted mb-5">
+        Streamline healthcare IT support through centralized ticket management,
+        operational reporting, and business intelligence.
+    </p>
+
+    <div class="d-flex justify-content-center gap-3">
+        <a asp-controller="Tickets"
+           asp-action="Index"
+           class="btn btn-primary btn-lg create-ticket-btn">
+            Ticket Management
+        </a>
+
+        <a asp-controller="Reports"
+           asp-action="Index"
+           class="btn btn-outline-dark btn-lg">
+            Reports Dashboard
+        </a>
+    </div>
+</div>
+
+<div class="row text-center mb-5">
+    <div class="col-md-4 mb-4">
+        <div class="card report-card h-100 shadow-sm">
+            <div class="card-body p-4">
+                <h4 class="fw-semibold">Ticket Management</h4>
+                <p class="text-muted mb-0">
+                    Create, edit, view, and manage healthcare IT support requests.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card report-card h-100 shadow-sm">
+            <div class="card-body p-4">
+                <h4 class="fw-semibold">Operational Tracking</h4>
+                <p class="text-muted mb-0">
+                    Track priority, status, assigned technicians, requesters, and days open.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card report-card h-100 shadow-sm">
+            <div class="card-body p-4">
+                <h4 class="fw-semibold">Reports Dashboard</h4>
+                <p class="text-muted mb-0">
+                    View dashboard metrics, ticket categories, priority levels, and status trends.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
