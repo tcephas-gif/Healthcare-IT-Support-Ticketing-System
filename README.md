@@ -6,6 +6,16 @@ The application allows users to create, manage, search, and analyze healthcare s
 
 ---
 
+## Getting Started
+
+1. Clone the repository.
+2. Open the solution in Visual Studio 2022.
+3. Update the SQL Server connection string in `appsettings.json`.
+4. Run Entity Framework Core migrations.
+5. Start the application.
+
+---
+
 ## Features
 
 - Create, edit, delete, and view support tickets
@@ -31,28 +41,45 @@ The application allows users to create, manage, search, and analyze healthcare s
 
 ---
 
-## Screenshots
+# Screenshots
 
-### Home
-
-
-<img width="3194" height="1664" alt="image" src="https://github.com/user-attachments/assets/6047f2ab-3047-40f9-adca-56f97d900c6f" />
-
-### Ticket Dashboard
-
-<img width="3152" height="1650" alt="image" src="https://github.com/user-attachments/assets/c7e06897-2e0d-4265-890e-c2a019a1ced2" />
+## Home Page
 
 
-### Reports Dashboard
+<img width="3194" height="1664" alt="Home Page" src="https://github.com/user-attachments/assets/4b72fe58-80b1-44bb-a036-0523f86c2cc3" />
 
-<img width="3196" height="1652" alt="image" src="https://github.com/user-attachments/assets/e9671049-fa67-4bf0-a532-4227ceea1425" />
+---
+
+## Ticket Dashboard
+
+<img width="3152" height="1650" alt="Healthcare Support Tickets Page" src="https://github.com/user-attachments/assets/84026a4b-5d46-4c2d-8964-231d3f47f9ea" />
 
 
-### Ticket Details
-<img width="3194" height="1666" alt="image" src="https://github.com/user-attachments/assets/c913e43d-e3f0-42c0-bd38-96a5aa1b5b4e" />
+---
 
-### Ticket Edit
-<img width="3200" height="1650" alt="image" src="https://github.com/user-attachments/assets/705db14d-8265-4290-8809-1affccfe35fb" />
+## Reports Dashboard
+
+<img width="3196" height="1652" alt="Healthcare Support Reports Page" src="https://github.com/user-attachments/assets/0133a24a-266b-4808-af8d-eea497033c90" />
+
+
+---
+
+## Ticket Details
+
+<img width="3194" height="1666" alt="Details Page" src="https://github.com/user-attachments/assets/a5340864-34be-450b-b900-33c3eebb54f4" />
+
+
+---
+
+## Edit Ticket
+
+<img width="3200" height="1650" alt="Edit Ticket Page" src="https://github.com/user-attachments/assets/6d2c6699-5397-4546-870e-775dd80860b1" />
+
+---
+
+## Create Ticket
+<img width="3200" height="1664" alt="Create Ticket Page" src="https://github.com/user-attachments/assets/c0d74d9b-3c18-4fd3-9793-d1e36f204423" />
+
 
 ---
 
@@ -70,8 +97,7 @@ The application allows users to create, manage, search, and analyze healthcare s
 
 ## Author
 
-Tanisha Cephas
+**Tanisha Cephas**
 
-Information Systems & Technology Student
-
+Information Systems & Technology Student  
 Old Dominion University
