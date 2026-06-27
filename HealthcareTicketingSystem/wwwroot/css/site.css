@@ -310,3 +310,10 @@ option {
     transform: translateY(-5px) scale(1.025) !important;
     box-shadow: 0 1rem 2rem rgba(0,0,0,.18) !important;
 }
+.report-card {
+    cursor: pointer;
+}
+
+    .report-card * {
+        cursor: pointer;
+    }
