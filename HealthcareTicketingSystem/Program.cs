@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Connect the app to SQL Server
+// Connect the app to SQL Server locally and SQLite on Railway/cloud
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     if (builder.Environment.IsDevelopment())
@@ -27,7 +27,14 @@ using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 
-    context.Database.Migrate();
+    if (app.Environment.IsDevelopment())
+    {
+        context.Database.Migrate();
+    }
+    else
+    {
+        context.Database.EnsureCreated();
+    }
 
     if (!context.Tickets.Any())
     {
