@@ -6,8 +6,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Connect the app to SQL Server
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DefaultConnection")));
+{
+    if (builder.Environment.IsDevelopment())
+    {
+        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    }
+    else
+    {
+        options.UseSqlite("Data Source=healthcaretickets.db");
+    }
+});
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
