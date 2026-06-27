@@ -46,39 +46,45 @@ The application allows users to create, manage, search, and analyze healthcare s
 ## Home Page
 
 
-<img width="3194" height="1664" alt="Home Page" src="https://github.com/user-attachments/assets/4b72fe58-80b1-44bb-a036-0523f86c2cc3" />
+<img width="3194" height="1664" alt="Home Page" src="https://github.com/user-attachments/assets/c6095cdd-286e-42fd-8bfd-a4924c782b64" />
+
 
 ---
 
 ## Ticket Dashboard
 
-<img width="3152" height="1650" alt="Healthcare Support Tickets Page" src="https://github.com/user-attachments/assets/84026a4b-5d46-4c2d-8964-231d3f47f9ea" />
+<img width="3174" height="1656" alt="Healthcare Support Tickets Page" src="https://github.com/user-attachments/assets/3481c9d5-6662-4897-80b7-f3a75f2b2612" />
+
 
 
 ---
 
 ## Reports Dashboard
 
-<img width="3196" height="1652" alt="Healthcare Support Reports Page" src="https://github.com/user-attachments/assets/0133a24a-266b-4808-af8d-eea497033c90" />
+<img width="3194" height="1664" alt="Healthcare Support Reports Page" src="https://github.com/user-attachments/assets/90fb36b8-a6ec-4260-aa1e-e888ce0ff2d3" />
+
 
 
 ---
 
 ## Ticket Details
+<img width="3198" height="1662" alt="Details Page" src="https://github.com/user-attachments/assets/81e61e30-e9bd-4786-9203-60d28fd6da76" />
 
-<img width="3194" height="1666" alt="Details Page" src="https://github.com/user-attachments/assets/a5340864-34be-450b-b900-33c3eebb54f4" />
+
 
 
 ---
 
 ## Edit Ticket
 
-<img width="3200" height="1650" alt="Edit Ticket Page" src="https://github.com/user-attachments/assets/6d2c6699-5397-4546-870e-775dd80860b1" />
+<img width="3192" height="1664" alt="Edit Ticket Page" src="https://github.com/user-attachments/assets/b8fdcd49-fb08-4773-9b93-b60008fbeed2" />
+
 
 ---
 
 ## Create Ticket
-<img width="3200" height="1664" alt="Create Ticket Page" src="https://github.com/user-attachments/assets/c0d74d9b-3c18-4fd3-9793-d1e36f204423" />
+<img width="3196" height="1656" alt="Create Ticket Page" src="https://github.com/user-attachments/assets/7778f0ac-cf5a-4dac-b3b5-244a3fb0362c" />
+
 
 
 ---
