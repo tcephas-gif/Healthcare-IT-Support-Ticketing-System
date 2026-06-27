@@ -78,11 +78,10 @@ select:focus-visible {
 
     .dashboard-card:hover,
     .report-card:hover {
-        transform: translateY(-7px) scale(1.018);
-        box-shadow: 0 1.15rem 2.25rem rgba(0,0,0,.20);
-        z-index: 5;
+        transform: translateY(-6px) scale(1.018);
+        box-shadow: 0 1rem 2rem rgba(0,0,0,.18);
+        z-index: 10;
     }
-
     .dashboard-card *,
     .report-card * {
         cursor: pointer;
@@ -247,38 +246,24 @@ option {
     height: 100%;
     transition: box-shadow .2s ease, background-color .2s ease;
 }
-
-    .detail-box:hover {
-        box-shadow: 0 .5rem 1rem rgba(0,0,0,.10);
-    }
-
-.detail-label {
-    display: block;
-    font-weight: 700;
-    color: #495057;
-    margin-bottom: .35rem;
-    font-size: .9rem;
-}
-
-.detail-box p {
-    margin-bottom: 0;
-}
-
-/* Page Animation */
-@keyframes fadeSlideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+/* Strong but professional hover polish */
 .dashboard-card,
 .report-card,
-.details-card {
-    animation: fadeSlideUp .5s ease both;
+.hero-section .btn,
+.create-ticket-btn {
+    transition: transform .18s ease-out, box-shadow .18s ease-out !important;
+    will-change: transform;
 }
+
+    .dashboard-card:hover,
+    .report-card:hover {
+        transform: translateY(-9px) scale(1.025) !important;
+        box-shadow: 0 1.4rem 2.8rem rgba(0,0,0,.24) !important;
+        z-index: 10;
+    }
+
+    .hero-section .btn:hover,
+    .create-ticket-btn:hover {
+        transform: translateY(-6px) scale(1.035) !important;
+        box-shadow: 0 1.2rem 2.4rem rgba(0,0,0,.22) !important;
+    }
