@@ -64,20 +64,35 @@ select:focus-visible {
             background: #f8f9fa;
         }
 
-/* Dashboard Cards */
-.dashboard-card {
+/* Cards */
+.dashboard-card,
+.report-card {
     border: none !important;
     border-radius: 22px;
     overflow: hidden;
     box-shadow: 0 .45rem 1rem rgba(0,0,0,.10);
-    transition: transform .25s ease, box-shadow .25s ease;
+    transition: transform .22s ease, box-shadow .22s ease;
     cursor: pointer;
+    will-change: transform;
 }
 
-    .dashboard-card:hover {
-        transform: translateY(-8px) scale(1.02);
-        box-shadow: 0 1.25rem 2.5rem rgba(0,0,0,.18);
+    .dashboard-card:hover,
+    .report-card:hover {
+        transform: translateY(-7px) scale(1.018);
+        box-shadow: 0 1.15rem 2.25rem rgba(0,0,0,.20);
         z-index: 5;
+    }
+
+    .dashboard-card *,
+    .report-card * {
+        cursor: pointer;
+    }
+
+    .dashboard-card h5,
+    .dashboard-card h2,
+    .report-card h4,
+    .report-card p {
+        user-select: none;
     }
 
     .dashboard-card .card-body {
@@ -94,20 +109,6 @@ select:focus-visible {
         font-weight: 700;
     }
 
-/* Report Cards */
-.report-card {
-    border: none;
-    border-radius: 22px;
-    overflow: hidden;
-    box-shadow: 0 .45rem 1rem rgba(0,0,0,.10);
-    transition: transform .25s ease, box-shadow .25s ease;
-}
-
-    .report-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 1rem 2rem rgba(0,0,0,.16);
-    }
-
 .card-header {
     font-weight: 600;
     letter-spacing: .3px;
@@ -118,16 +119,17 @@ select:focus-visible {
 /* Buttons */
 .btn {
     border-radius: 12px;
-    transition: transform .2s ease, box-shadow .2s ease;
+    transition: transform .22s ease, box-shadow .22s ease;
+    will-change: transform;
 }
 
     .btn:not(.dropdown-toggle):hover {
-        transform: translateY(-3px);
-        box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.15);
+        transform: translateY(-5px) scale(1.025);
+        box-shadow: 0 1rem 2rem rgba(0,0,0,.18);
     }
 
 .btn-primary:not(.dropdown-toggle):hover {
-    box-shadow: 0 .85rem 1.75rem rgba(13,110,253,.35);
+    box-shadow: 0 1rem 2rem rgba(13,110,253,.35);
 }
 
 /* Create Ticket Button */
@@ -140,11 +142,6 @@ select:focus-visible {
     box-shadow: 0 .4rem .9rem rgba(13,110,253,.2);
 }
 
-    .create-ticket-btn:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 1rem 2rem rgba(13,110,253,.35);
-    }
-
 /* Badges */
 .badge {
     font-size: .8rem;
@@ -155,19 +152,14 @@ select:focus-visible {
 }
 
     .badge:hover {
-        transform: scale(1.1);
-        box-shadow: 0 .35rem .8rem rgba(0,0,0,.18);
+        transform: scale(1.08);
+        box-shadow: 0 .35rem .8rem rgba(0,0,0,.16);
     }
 
 /* Forms */
 .form-control,
 .form-select {
     border-radius: 12px;
-}
-
-.form-control,
-.form-select,
-.btn {
     animation: none !important;
 }
 
@@ -186,11 +178,34 @@ select:focus-visible {
     transition: border-color .15s ease-in-out !important;
 }
 
+select.form-control,
+select.form-select {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    background-image: none !important;
+    background-color: #ffffff !important;
+    border: 1px solid #ced4da !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+    select.form-control:focus,
+    select.form-select:focus,
+    select.form-control:active,
+    select.form-select:active {
+        background-color: #ffffff !important;
+        border-color: #adb5bd !important;
+        box-shadow: none !important;
+        outline: none !important;
+    }
+
 option {
     background-color: #ffffff;
     color: #212529;
 }
 
+/* Bootstrap dropdown menu styling */
 .dropdown-toggle,
 .dropdown-toggle:hover,
 .dropdown-toggle:focus,
@@ -267,28 +282,3 @@ option {
 .details-card {
     animation: fadeSlideUp .5s ease both;
 }
-
-.report-card {
-    animation-delay: .15s;
-}
-select.form-control,
-select.form-select {
-    appearance: none !important;
-    -webkit-appearance: none !important;
-    -moz-appearance: none !important;
-    background-image: none !important;
-    background-color: #ffffff !important;
-    border: 1px solid #ced4da !important;
-    box-shadow: none !important;
-    outline: none !important;
-}
-
-    select.form-control:focus,
-    select.form-select:focus,
-    select.form-control:active,
-    select.form-select:active {
-        background-color: #ffffff !important;
-        border-color: #adb5bd !important;
-        box-shadow: none !important;
-        outline: none !important;
-    }
