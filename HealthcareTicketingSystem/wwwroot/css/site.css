@@ -1,38 +1,48 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+    scroll-behavior: smooth;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+    html {
+        font-size: 16px;
+    }
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
-}
-
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
-}
 .bg-orange {
     background-color: #fd7e14;
     color: white;
 }
+
+/* Focus states */
+.form-control:focus,
+.form-select:focus,
+input:focus,
+textarea:focus,
+select:focus,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    border-color: #adb5bd !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-check-input:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Tables */
 .table {
     width: 100%;
 }
@@ -46,74 +56,15 @@ body {
             white-space: nowrap;
         }
 
-.bg-orange {
-    background-color: #fd7e14;
-    color: white;
-}
-.dashboard-card,
-.report-card {
-    border: none;
-    border-radius: 12px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-    .dashboard-card:hover,
-    .report-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15);
+    .table tbody tr {
+        transition: background-color .2s ease;
     }
 
-.card-header {
-    border-top-left-radius: 12px !important;
-    border-top-right-radius: 12px !important;
-}
+        .table tbody tr:hover {
+            background: #f8f9fa;
+        }
 
-.badge {
-    padding: 0.45em 0.65em;
-    font-weight: 600;
-}
-.reports-hero {
-    padding-top: 1rem;
-}
-
-.dashboard-card,
-.report-card {
-    border: none;
-    border-radius: 18px;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-    .dashboard-card:hover,
-    .report-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.16) !important;
-    }
-
-    .report-card .card-header {
-        border-top-left-radius: 18px !important;
-        border-top-right-radius: 18px !important;
-    }
-
-    .dashboard-card .card-body {
-        padding: 1.5rem;
-    }
-
-.chart-box {
-    height: 340px;
-}
-
-.chart-box-large {
-    height: 360px;
-}
-
-.badge {
-    padding: 0.45em 0.65em;
-    font-weight: 600;
-}
-/* ==========================================
-   Dashboard Cards
-========================================== */
-
+/* Dashboard Cards */
 .dashboard-card {
     border: none !important;
     border-radius: 22px;
@@ -143,11 +94,7 @@ body {
         font-weight: 700;
     }
 
-
-/* ==========================================
-   Report Cards
-========================================== */
-
+/* Report Cards */
 .report-card {
     border: none;
     border-radius: 22px;
@@ -164,51 +111,46 @@ body {
 .card-header {
     font-weight: 600;
     letter-spacing: .3px;
+    border-top-left-radius: 22px !important;
+    border-top-right-radius: 22px !important;
 }
 
-
-/* ==========================================
-   Buttons
-========================================== */
-
+/* Buttons */
 .btn {
     border-radius: 12px;
     transition: transform .2s ease, box-shadow .2s ease;
 }
 
-    .btn:hover {
+    .btn:not(.dropdown-toggle):hover {
         transform: translateY(-3px);
         box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.15);
     }
 
-.btn-primary:hover {
+.btn-primary:not(.dropdown-toggle):hover {
     box-shadow: 0 .85rem 1.75rem rgba(13,110,253,.35);
 }
 
-
-/* ==========================================
-   Table
-========================================== */
-
-.table tbody tr {
-    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+/* Create Ticket Button */
+.create-ticket-btn {
+    min-width: 190px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.9rem 1.8rem;
+    border-radius: 14px;
+    box-shadow: 0 .4rem .9rem rgba(13,110,253,.2);
 }
 
-    .table tbody tr:hover {
-        transform: translateY(-2px);
-        background: #f8f9fa;
-        box-shadow: 0 .5rem 1rem rgba(0,0,0,.12);
+    .create-ticket-btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 1rem 2rem rgba(13,110,253,.35);
     }
 
-
-/* ==========================================
-   Badges
-========================================== */
-
+/* Badges */
 .badge {
     font-size: .8rem;
     padding: .45rem .7rem;
     border-radius: 50rem;
+    font-weight: 600;
     transition: transform .2s ease, box-shadow .2s ease;
 }
 
@@ -217,32 +159,98 @@ body {
         box-shadow: 0 .35rem .8rem rgba(0,0,0,.18);
     }
 
-
-/* ==========================================
-   Forms
-========================================== */
-
+/* Forms */
 .form-control,
 .form-select {
     border-radius: 12px;
 }
 
+.form-control,
+.form-select,
+.btn {
+    animation: none !important;
+}
 
-/* ==========================================
-   Chart Containers
-========================================== */
+    .form-select,
+    .form-select:hover,
+    .form-select:focus,
+    .form-select:active,
+    select,
+    select:hover,
+    select:focus,
+    select:active {
+        transform: none !important;
+    }
 
+.form-select {
+    transition: border-color .15s ease-in-out !important;
+}
+
+option {
+    background-color: #ffffff;
+    color: #212529;
+}
+
+.dropdown-toggle,
+.dropdown-toggle:hover,
+.dropdown-toggle:focus,
+.dropdown-toggle:active {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.dropdown-menu {
+    border-radius: 12px;
+    box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.15);
+    overflow: hidden;
+}
+
+.dropdown-item {
+    transition: background-color .15s ease, color .15s ease;
+}
+
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+        background-color: #f8f9fa;
+        color: #212529;
+    }
+
+/* Chart Containers */
 .chart-box {
     height: 340px;
 }
 
+.chart-box-large {
+    height: 360px;
+}
 
-/* ==========================================
-   Page Animation
-========================================== */
+/* Details Page */
+.detail-box {
+    background: #f8f9fa;
+    border-radius: 14px;
+    padding: 1rem;
+    height: 100%;
+    transition: box-shadow .2s ease, background-color .2s ease;
+}
 
+    .detail-box:hover {
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.10);
+    }
+
+.detail-label {
+    display: block;
+    font-weight: 700;
+    color: #495057;
+    margin-bottom: .35rem;
+    font-size: .9rem;
+}
+
+.detail-box p {
+    margin-bottom: 0;
+}
+
+/* Page Animation */
 @keyframes fadeSlideUp {
-
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -260,72 +268,27 @@ body {
     animation: fadeSlideUp .5s ease both;
 }
 
-    .dashboard-card:nth-child(1) {
-        animation-delay: .05s;
-    }
-
-    .dashboard-card:nth-child(2) {
-        animation-delay: .10s;
-    }
-
-    .dashboard-card:nth-child(3) {
-        animation-delay: .15s;
-    }
-
-    .dashboard-card:nth-child(4) {
-        animation-delay: .20s;
-    }
-
 .report-card {
     animation-delay: .15s;
 }
-.detail-box {
-    background: #f8f9fa;
-    border-radius: 14px;
-    padding: 1rem;
-    height: 100%;
-    transition: all .2s ease;
+select.form-control,
+select.form-select {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    background-image: none !important;
+    background-color: #ffffff !important;
+    border: 1px solid #ced4da !important;
+    box-shadow: none !important;
+    outline: none !important;
 }
 
-    .detail-box:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 .5rem 1rem rgba(0,0,0,.10);
+    select.form-control:focus,
+    select.form-select:focus,
+    select.form-control:active,
+    select.form-select:active {
+        background-color: #ffffff !important;
+        border-color: #adb5bd !important;
+        box-shadow: none !important;
+        outline: none !important;
     }
-
-.detail-label {
-    display: block;
-    font-weight: 700;
-    color: #495057;
-    margin-bottom: .35rem;
-    font-size: .9rem;
-}
-
-.detail-box p {
-    margin-bottom: 0;
-}
-/* ==========================================
-   Create Ticket Button
-========================================== */
-
-.create-ticket-btn {
-    font-size: 1.1rem;
-    font-weight: 600;
-    padding: 0.9rem 1.8rem;
-    border-radius: 14px;
-    box-shadow: 0 .4rem .9rem rgba(13,110,253,.2);
-    transition: transform .25s ease, box-shadow .25s ease;
-}
-
-    .create-ticket-btn:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 1rem 2rem rgba(13,110,253,.35);
-    }
-.create-ticket-btn {
-    min-width: 190px;
-}
-html{
-    scroll-behavior:smooth;
-}
-html {
-    scroll-behavior: smooth;
-}

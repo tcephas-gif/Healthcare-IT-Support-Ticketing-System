@@ -12,10 +12,11 @@
         </p>
     </div>
 
-    <a asp-action="Create" class="btn btn-primary btn-lg create-ticket-btn">
-        <i class="bi bi-plus-circle me-2"></i>
-        Create Ticket
-    </a>
+        <a asp-action="Create" class="btn btn-primary btn-lg create-ticket-btn">
+            <i class="bi bi-plus-circle me-2"></i>
+            Create Ticket
+        </a>
+   
 </div>
 
 <div class="row mb-4">
@@ -94,47 +95,49 @@
     </div>
 
     <div class="card-body">
-        <form asp-action="Index" method="get" class="row g-3 align-items-center">
+        <form asp-action="Index"
+              method="get"
+              class="row g-3 align-items-center"
+              autocomplete="off">
+
             <div class="col-md-3">
-                <input type="text"
+                <input type="search"
                        name="searchString"
                        value="@ViewBag.SearchString"
                        class="form-control"
-                       placeholder="Search tickets..." />
+                       placeholder="Search tickets..."
+                       autocomplete="new-password"
+                       spellcheck="false" />
             </div>
 
             <div class="col-md-2">
-                <select name="statusFilter" class="form-select">
-                    <option value="">All Statuses</option>
-                    <option value="Open">Open</option>
-                    <option value="In Progress">In Progress</option>
-                    <option value="Pending">Pending</option>
-                    <option value="Resolved">Resolved</option>
-                    <option value="Closed">Closed</option>
-                </select>
+                <input type="search"
+                       name="statusFilter"
+                       value="@ViewBag.StatusFilter"
+                       class="form-control"
+                       placeholder="Status"
+                       autocomplete="new-password"
+                       spellcheck="false" />
             </div>
 
             <div class="col-md-2">
-                <select name="priorityFilter" class="form-select">
-                    <option value="">All Priorities</option>
-                    <option value="Low">Low</option>
-                    <option value="Medium">Medium</option>
-                    <option value="High">High</option>
-                    <option value="Critical">Critical</option>
-                </select>
+                <input type="search"
+                       name="priorityFilter"
+                       value="@ViewBag.PriorityFilter"
+                       class="form-control"
+                       placeholder="Priority"
+                       autocomplete="new-password"
+                       spellcheck="false" />
             </div>
 
             <div class="col-md-3">
-                <select name="categoryFilter" class="form-select">
-                    <option value="">All Categories</option>
-                    <option>EHR System</option>
-                    <option>Network</option>
-                    <option>Medical Device</option>
-                    <option>Password Reset</option>
-                    <option>Email</option>
-                    <option>Printer</option>
-                    <option>Security</option>
-                </select>
+                <input type="search"
+                       name="categoryFilter"
+                       value="@ViewBag.CategoryFilter"
+                       class="form-control"
+                       placeholder="Category"
+                       autocomplete="new-password"
+                       spellcheck="false" />
             </div>
 
             <div class="col-md-2 d-grid gap-2">
