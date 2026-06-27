@@ -7,12 +7,13 @@ The application allows users to create, manage, search, and analyze healthcare s
 ---
 
 ## Getting Started
+## Getting Started
 
-1. Clone the repository.
-2. Open the solution in Visual Studio 2022.
-3. Update the SQL Server connection string in `appsettings.json`.
-4. Run Entity Framework Core migrations.
-5. Start the application.
+1. Clone or download this repository.
+2. Open the solution in Visual Studio 2022/2026.
+3. Restore NuGet packages if prompted.
+4. Update the SQL Server connection string in `appsettings.json`.
+5. Run the project.
 
 ---
 
