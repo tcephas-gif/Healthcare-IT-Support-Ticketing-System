@@ -106,38 +106,39 @@
                        value="@ViewBag.SearchString"
                        class="form-control"
                        placeholder="Search tickets..."
-                       autocomplete="new-password"
-                       spellcheck="false" />
+                       autocomplete="off" />
             </div>
 
             <div class="col-md-2">
-                <input type="search"
-                       name="statusFilter"
-                       value="@ViewBag.StatusFilter"
-                       class="form-control"
-                       placeholder="Status"
-                       autocomplete="new-password"
-                       spellcheck="false" />
+                <select name="statusFilter" class="form-select">
+                    <option value="">All Statuses</option>
+                    <option value="Open">Open</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Resolved">Resolved</option>
+                    <option value="Closed">Closed</option>
+                </select>
             </div>
 
             <div class="col-md-2">
-                <input type="search"
-                       name="priorityFilter"
-                       value="@ViewBag.PriorityFilter"
-                       class="form-control"
-                       placeholder="Priority"
-                       autocomplete="new-password"
-                       spellcheck="false" />
+                <select name="priorityFilter" class="form-select">
+                    <option value="">All Priorities</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                    <option value="Critical">Critical</option>
+                </select>
             </div>
 
             <div class="col-md-3">
-                <input type="search"
-                       name="categoryFilter"
-                       value="@ViewBag.CategoryFilter"
-                       class="form-control"
-                       placeholder="Category"
-                       autocomplete="new-password"
-                       spellcheck="false" />
+                <select name="categoryFilter" class="form-select">
+                    <option value="">All Categories</option>
+                    <option value="EHR System">EHR System</option>
+                    <option value="Network">Network</option>
+                    <option value="Medical Device">Medical Device</option>
+                    <option value="Password Reset">Password Reset</option>
+                    <option value="Printer">Printer</option>
+                    <option value="Patient Portal">Patient Portal</option>
+                </select>
             </div>
 
             <div class="col-md-2 d-grid gap-2">

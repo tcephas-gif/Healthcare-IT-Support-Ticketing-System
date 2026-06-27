@@ -267,3 +267,46 @@ option {
         transform: translateY(-6px) scale(1.035) !important;
         box-shadow: 0 1.2rem 2.4rem rgba(0,0,0,.22) !important;
     }
+    /* Cleaner ticket page hover */
+    .dashboard-card:hover,
+    .report-card:hover {
+        transform: translateY(-5px) scale(1.012) !important;
+        box-shadow: 0 .9rem 1.8rem rgba(0,0,0,.16) !important;
+        z-index: 5;
+    }
+
+/* Keep dropdowns stable */
+.form-select,
+.form-select:hover,
+.form-select:focus,
+.form-select:active {
+    transform: none !important;
+    box-shadow: none !important;
+}
+.form-select {
+    border-radius: 16px;
+    height: 50px;
+    padding-left: 16px;
+}
+
+.form-control {
+    border-radius: 16px;
+    height: 50px;
+    padding-left: 16px;
+}
+/* Final ticket page hover tuning */
+.dashboard-card:hover {
+    transform: translateY(-5px) scale(1.015) !important;
+    box-shadow: 0 .9rem 1.8rem rgba(0,0,0,.18) !important;
+}
+
+.report-card:hover {
+    transform: translateY(-5px) scale(1.015) !important;
+    box-shadow: 0 .9rem 1.8rem rgba(0,0,0,.18) !important;
+}
+
+.hero-section .btn:hover,
+.create-ticket-btn:hover {
+    transform: translateY(-5px) scale(1.025) !important;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.18) !important;
+}
