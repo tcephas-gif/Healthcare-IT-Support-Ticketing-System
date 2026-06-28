@@ -70,7 +70,7 @@ select:focus-visible {
     border: none !important;
     border-radius: 22px;
     overflow: hidden;
-    box-shadow: 0 .45rem 1rem rgba(0,0,0,.10);
+    box-shadow: 0 .35rem .9rem rgba(0,0,0,.08);
     transition: transform .22s ease, box-shadow .22s ease;
     cursor: pointer;
     will-change: transform;
@@ -78,10 +78,11 @@ select:focus-visible {
 
     .dashboard-card:hover,
     .report-card:hover {
-        transform: translateY(-6px) scale(1.018);
-        box-shadow: 0 1rem 2rem rgba(0,0,0,.18);
-        z-index: 10;
+        transform: translateY(-5px) scale(1.012);
+        box-shadow: 0 .75rem 1.4rem rgba(0,0,0,.13);
+        z-index: 5;
     }
+
     .dashboard-card *,
     .report-card * {
         cursor: pointer;
@@ -123,12 +124,12 @@ select:focus-visible {
 }
 
     .btn:not(.dropdown-toggle):hover {
-        transform: translateY(-5px) scale(1.025);
-        box-shadow: 0 1rem 2rem rgba(0,0,0,.18);
+        transform: translateY(-4px) scale(1.015);
+        box-shadow: 0 .7rem 1.4rem rgba(0,0,0,.13);
     }
 
 .btn-primary:not(.dropdown-toggle):hover {
-    box-shadow: 0 1rem 2rem rgba(13,110,253,.35);
+    box-shadow: 0 .8rem 1.6rem rgba(13,110,253,.25);
 }
 
 /* Create Ticket Button */
@@ -138,7 +139,7 @@ select:focus-visible {
     font-weight: 600;
     padding: 0.9rem 1.8rem;
     border-radius: 14px;
-    box-shadow: 0 .4rem .9rem rgba(13,110,253,.2);
+    box-shadow: 0 .35rem .8rem rgba(13,110,253,.18);
 }
 
 /* Badges */
@@ -151,14 +152,16 @@ select:focus-visible {
 }
 
     .badge:hover {
-        transform: scale(1.08);
-        box-shadow: 0 .35rem .8rem rgba(0,0,0,.16);
+        transform: scale(1.06);
+        box-shadow: 0 .25rem .6rem rgba(0,0,0,.12);
     }
 
 /* Forms */
 .form-control,
 .form-select {
-    border-radius: 12px;
+    border-radius: 16px;
+    height: 50px;
+    padding-left: 16px;
     animation: none !important;
 }
 
@@ -215,7 +218,7 @@ option {
 
 .dropdown-menu {
     border-radius: 12px;
-    box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.15);
+    box-shadow: 0 .55rem 1.1rem rgba(0,0,0,.12);
     overflow: hidden;
 }
 
@@ -246,74 +249,7 @@ option {
     height: 100%;
     transition: box-shadow .2s ease, background-color .2s ease;
 }
-/* Strong but professional hover polish */
-.dashboard-card,
-.report-card,
-.hero-section .btn,
-.create-ticket-btn {
-    transition: transform .18s ease-out, box-shadow .18s ease-out !important;
-    will-change: transform;
-}
 
-    .dashboard-card:hover,
-    .report-card:hover {
-        transform: translateY(-9px) scale(1.025) !important;
-        box-shadow: 0 1.4rem 2.8rem rgba(0,0,0,.24) !important;
-        z-index: 10;
-    }
-
-    .hero-section .btn:hover,
-    .create-ticket-btn:hover {
-        transform: translateY(-6px) scale(1.035) !important;
-        box-shadow: 0 1.2rem 2.4rem rgba(0,0,0,.22) !important;
-    }
-    /* Cleaner ticket page hover */
-    .dashboard-card:hover,
-    .report-card:hover {
-        transform: translateY(-5px) scale(1.012) !important;
-        box-shadow: 0 .9rem 1.8rem rgba(0,0,0,.16) !important;
-        z-index: 5;
-    }
-
-/* Keep dropdowns stable */
-.form-select,
-.form-select:hover,
-.form-select:focus,
-.form-select:active {
-    transform: none !important;
-    box-shadow: none !important;
-}
-.form-select {
-    border-radius: 16px;
-    height: 50px;
-    padding-left: 16px;
-}
-
-.form-control {
-    border-radius: 16px;
-    height: 50px;
-    padding-left: 16px;
-}
-/* Final ticket page hover tuning */
-.dashboard-card:hover {
-    transform: translateY(-5px) scale(1.015) !important;
-    box-shadow: 0 .9rem 1.8rem rgba(0,0,0,.18) !important;
-}
-
-.report-card:hover {
-    transform: translateY(-5px) scale(1.015) !important;
-    box-shadow: 0 .9rem 1.8rem rgba(0,0,0,.18) !important;
-}
-
-.hero-section .btn:hover,
-.create-ticket-btn:hover {
-    transform: translateY(-5px) scale(1.025) !important;
-    box-shadow: 0 1rem 2rem rgba(0,0,0,.18) !important;
-}
-.report-card {
-    cursor: pointer;
-}
-
-    .report-card * {
-        cursor: pointer;
+    .detail-box:hover {
+        box-shadow: 0 .35rem .8rem rgba(0,0,0,.08);
     }
