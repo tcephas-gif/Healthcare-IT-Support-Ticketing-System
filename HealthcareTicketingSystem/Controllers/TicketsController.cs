@@ -179,9 +179,14 @@ public class TicketsController : Controller
         return RedirectToAction(nameof(Index));
     }
 
+    public IActionResult RestoreDemoData()
+    {
+        return View();
+    }
+
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> ResetDemoData()
+    public async Task<IActionResult> RestoreDemoDataConfirmed()
     {
         _context.Tickets.RemoveRange(_context.Tickets);
 
@@ -190,7 +195,6 @@ public class TicketsController : Controller
 
         return RedirectToAction(nameof(Index));
     }
-
     private void ValidateTicketContent(Ticket ticket)
     {
         bool containsBadWord = ProfanityFilter.ContainsInappropriateContent(

@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Restore Demo Data";
+}
+
+<div class="card report-card shadow-sm mx-auto mt-5" style="max-width: 700px;">
+    <div class="card-header bg-warning text-dark py-3">
+        <h4 class="mb-0 fw-semibold">Restore Demo Data</h4>
+    </div>
+
+    <div class="card-body p-4">
+        <p class="lead">
+            This will restore the ticket system back to the original demo dataset.
+        </p>
+
+        <p class="text-muted">
+            Any tickets created, edited, or deleted by visitors will be removed and replaced with the original sample tickets.
+        </p>
+
+        <div class="alert alert-warning">
+            This action is intended to keep the public portfolio demo clean and professional.
+        </div>
+
+        <form asp-action="RestoreDemoDataConfirmed" method="post" class="d-flex gap-2">
+            @Html.AntiForgeryToken()
+
+            <button type="submit" class="btn btn-warning">
+                Yes, Restore Demo Data
+            </button>
+
+            <a asp-action="Index" class="btn btn-outline-secondary">
+                Cancel
+            </a>
+        </form>
+    </div>
+</div>
